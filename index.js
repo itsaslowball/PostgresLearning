@@ -1,16 +1,17 @@
+
 const express = require('express');
 const { Client } = require('pg');
-const studentRoutes = require('./Routes/students')
+const studentRoutes = require('./Routes/students');
 
 const app = express();
 app.use(express.json());
 
 const client = new Client({
-  host: "ep-soft-water-a5li3tz0.us-east-2.aws.neon.tech",
+  host: process.env.HOST,
   port: 5432,
   database: "postreSQL",
-  user: "postreSQL_owner",
-  password: "5CXwDnkHv2RZ",
+  user: process.env.USER,
+  password: process.env.PASSWORD,
   ssl: {
     rejectUnauthorized: false,
   },

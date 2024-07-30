@@ -18,5 +18,5 @@ const getStudents =`
 module.exports = {
   createUserTable,
   insertDataQuery,
-  getStudents
+  getStudents.
 };

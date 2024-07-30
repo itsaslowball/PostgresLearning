@@ -1,10 +1,10 @@
 
-const { createUserTable, insertDataQuery, getStudents: fetchStudents } = require('../queries');
+const queries = require('../queries');
 
 const getStudents = async(req, res)=>{
   try{
     const client = req.client;
-    const students = await client.query("SELECT * FROM users");
+    const students = await client.query(queries.getStudents);
     res.send(students.rows)
   }
   catch(e){
