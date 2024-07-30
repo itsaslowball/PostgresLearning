@@ -1,7 +1,9 @@
 const {Router} = require('express');
-const { getStudents } = require('../Controllers/students.controller');
+const controller = require('../Controllers/students.controller');
 const router = Router();
 
-router.get('/',getStudents);
+router.get('/',controller.getStudents);
+router.get('/:id', controller.getStudentById);
+router.post('/', controller.addStudent);
 
 module.exports = router

@@ -8,15 +8,18 @@ const createUserTable = `
 
  const insertDataQuery = `
   INSERT INTO users (name, age)
-  VALUES ('John Doe', 30), ('Jane Smith', 25)
+  VALUES ($1, $2)
+  RETURNING *;
 `;
 
 const getStudents =`
   SELECT * FROM users
 `
+const getStudentById = 'SELECT * FROM users WHERE id = $1';
 
 module.exports = {
   createUserTable,
   insertDataQuery,
-  getStudents.
+  getStudents,
+  getStudentById
 };
